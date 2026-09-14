@@ -1,11 +1,485 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>hello</title>
-</head>
-<body>
+    <meta name="description" content="Sustainable Energy - clean energy for a greener future">
+    <title>Sustainable Energy</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+         body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0e2018;
+            color: #d8fae5;
+            line-height: 1.6
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background: rgba(7, 19, 14, .85);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid #1d4531;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center
+        }
+
+        .logo {
+            font-weight: 900;
+            letter-spacing: 2px;
+            font-size: 20px
+        }
+
+        .logo span {
+            color: #a9ff3f
+        }
+
+        nav {
+            display: flex;
+            gap: 25px
+        }
+
+        nav a {
+            color: #a5b9ae;
+            font-size: 14px
+        }
+
+        nav a:hover {
+            color: #a9ff3f
+        }
+
+        .sk {
+            min-height: 700px;
+            padding: 110px 8%;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: radial-gradient(circle at 75% 45%, #1b6a3c55, transparent 30%)
+        }
+
+        .sk:after {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border: 1px solid #a9ff3f33;
+            border-radius: 50%;
+            right: 5%;
+            top: 15%;
+            animation: spin 20s linear infinite
+        }
+
+        .sk-con {
+            max-width: 850px;
+            position: relative;
+            z-index: 2
+        }
+
+        .kk{
+            color: #a9ff3f;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 18px
+        }
+
+        h1 {
+            font-size: clamp(50px, 8vw, 100px);
+            line-height: .95;
+            letter-spacing: -5px
+        }
+
+        h1 span,
+        h2 span {
+            color: #a9ff3f
+        }
+
+        .sk p {
+            max-width: 650px;
+            color: #a7b9af;
+            font-size: 19px;
+            margin: 28px 0
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 22px;
+            border-radius: 12px;
+            background: #a9ff3f;
+            color: #07130e;
+            font-weight: bold
+        }
+
+        .sund {
+            position: absolute;
+            right: 15%;
+            top: 25%;
+            font-size: 110px;
+            color: #ffe66b;
+            filter: drop-shadow(0 0 35px #a9ff3f);
+            animation: pulse 3s infinite
+        }
+
+        section {
+            padding: 85px 8%;
+            max-width: 1400px;
+            margin: auto
+        }
+
+        .na {
+            max-width: 800px;
+            margin-bottom: 40px
+        }
+
+        .na h2 {
+            font-size: clamp(35px, 5vw, 65px);
+            line-height: 1.05;
+            margin-bottom: 12px
+        }
+
+        .na p {
+            color: #a7b9af
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px
+        }
+
+        .card {
+            background: #0e2118;
+            border: 1px solid #1d4531;
+            border-radius: 20px;
+            padding: 28px;
+            transition: .3s
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: #a9ff3f
+        }
+
+        .ic {
+            font-size: 38px;
+            color: #a9ff3f;
+            margin-bottom: 18px
+        }
+
+        .card h3 {
+            font-size: 23px;
+            margin-bottom: 8px
+        }
+
+        .card p {
+            color: #a7b9af;
+            font-size: 14px
+        }
+
+        .works {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px
+        }
+
+        .st {
+            border-left: 3px solid #a9ff3f;
+            padding: 20px;
+            background: #0b1c15
+        }
+
+        .st b {
+            color: #a9ff3f
+        }
+
+        .st h3 {
+            margin: 8px 0
+        }
+
+        .st p {
+            color: #a7b9af;
+            font-size: 14px
+        }
+
+        .compare {
+            max-width: none;
+            background: #091a12
+        }
+
+        .tablebox {
+            overflow: auto
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #0e2118;
+            border-radius: 16px;
+            overflow: hidden
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 18px;
+            border-bottom: 1px solid #1d4531
+        }
+
+        th {
+            color: #a9ff3f;
+            font-size: 13px
+        }
+
+        td {
+            color: #a7b9af
+        }
+
+        
+  
     
+
+        .result {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-top: 25px
+        }
+
+        .result div {
+            background: #122a20;
+            padding: 20px;
+            border-radius: 14px
+        }
+
+        .result strong {
+            display: block;
+            color: #a9ff3f;
+            font-size: 24px
+        }
+
+        .result small {
+            color: #a7b9af
+        }
+
+        .cta {
+            margin: 70px auto;
+            border: 1px solid #315d43;
+            border-radius: 25px;
+            background: linear-gradient(100deg, #17482e, #0d2118);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px
+        }
+
+        footer {
+            padding: 50px 8%;
+            border-top: 1px solid #1d4531;
+            color: #9db1a6;
+            background: #050c08
+        }
+
+        footer p {
+            margin: 12px 0;
+            color: #9db1a6
+        }
+
+
+        @media(max-width:900px) {
+
+            .cards,
+            .works {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .sk {
+                min-height: 600px
+            }
+
+            .sund {
+                opacity: .25
+            }
+        }
+
+        @media(max-width:600px) {
+            nav {
+                display: none
+            }
+
+            .cards,
+            .works,
+            .result {
+                grid-template-columns: 1fr
+            }
+
+            section {
+                padding: 65px 6%
+            }
+
+            .sk {
+                padding: 80px 6%
+            }
+
+            h1 {
+                letter-spacing: -3px
+            }
+
+            .cta {
+                display: block
+            }
+
+            .cta .btn {
+                margin-top: 20px
+            }
+        }
+        
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a class="logo" href="#"><span></span> SUSTAINABLE ENERGY</a>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#types">Energy</a>
+            <a href="#works">Works</a>
+            <a href="#benefits">Benefits</a>
+           <!-- <a href="#calculator">Calculator</a>-->
+        </nav>
+    </header>
+
+    <main>
+        <section class="sk">
+            <div class="sund"></div>
+            <div class="hero-con">
+                <div class="kk">CLEAN ENERGY • BRIGHTER FUTURE</div>
+                <h1>POWER THE <span>FUTURE.</span><br>PROTECT THE PLANET.</h1>
+                <p>Sustainable energy comes from renewable resources such as sunlight, wind and water. It helps reduce
+                    pollution, protect natural resources and create a cleaner future for everyone.</p>
+                <a class="btn" href="#types">Explore Sustainable Energy ↓</a>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="na">
+                <div class="kk">01 / ABOUT</div>
+                <h2>What is <span>Sustainable Energy?</span></h2>
+                <p>Sustainable energy is energy produced from resources that naturally replenish and can be used without
+                    permanently damaging the environment. The goal is to meet today's energy needs while protecting
+                    tomorrow's world.</p>
+            </div>
+        </section>
+
+        <section id="types">
+            <div class="na">
+                <div class="kk"> ENERGY SOURCES</div>
+                <h2>Four paths to a <span>cleaner future.</span></h2>
+            </div>
+          
+        </section>
+
+        <section id="works">
+            <div class="na">
+                <div class="kk">03 / HOW IT WORKS</div>
+                <h2>From natural resources to <span>clean power.</span></h2>
+            </div>
+            <div class="works">
+                <div class="st"><b>1</b>
+                    <h3>Resource</h3>
+                    <p>Sunlight, wind, water or organic matter provides the energy source.</p>
+                </div>
+                <div class="st"><b>2</b>
+                    <h3>Capture</h3>
+                    <p>Solar cells, turbines or other technology captures the available energy.</p>
+                </div>
+                <div class="st"><b>3</b>
+                    <h3>Convert</h3>
+                    <p>Energy is converted into electricity or another useful form.</p>
+                </div>
+                <div class="st"><b>4</b>
+                    <h3>Use</h3>
+                    <p>Clean power reaches homes, businesses, transport and communities.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="benefits">
+            <div class="title">
+                <div class="tag"> WHY IT MATTERS</div><br>
+                <h2>Benefits of <span>clean energy.</span></h2>
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <div class="ic"></div>
+                    <h3>Less Pollution</h3>
+                    <p>Renewable energy can significantly reduce air pollution and greenhouse-gas emissions compared
+                        with fossil fuels.</p>
+                </div>
+                <div class="card">
+                    <div class="ic"></div>
+                    <h3>Renewable</h3>
+                    <p>Sunlight, wind and water are naturally replenished and can support long-term energy needs.</p>
+                </div>
+                <div class="card">
+                    <div class="ic"></div>
+                    <h3>Energy Security</h3>
+                    <p>Local renewable resources can reduce dependence on imported fossil fuels.</p>
+                </div>
+                <div class="card">
+                    <div class="ic"></div>
+                    <h3>Innovation</h3>
+                    <p>Clean-energy technology creates opportunities for smarter infrastructure and new solutions.</p>
+                </div>
+            </div>
+        </section>
+ 
+        <section class="cta">
+            <div>
+                <div class="kk">OUR SHARED FUTURE</div>
+                <h2>Clean energy starts with <span>knowledge.</span></h2>
+            </div>
+            <a class="btn" href="#about">Learn More ↑</a>
+        </section>
+    </main>
+
+    <footer>
+        <strong>SUSTAINABLE ENERGY</strong>
+        <p>Powering a greener tomorrow through renewable resources, innovation and responsible choices.</p>
+        <small>© 2026 Sustainable Energy Project</small>
+    </footer>
+<!--  <script>
+        function calculate() {
+            const usage = Number(document.getElementById('usage').value) || 0;
+            const capacity = Number(document.getElementById('capacity').value) || 0;
+            const generation = Math.min(usage, capacity * 120);
+            const savings = generation * 8;
+            const co2 = generation * .7;
+            document.getElementById('generation').textContent = Math.round(generation);
+            document.getElementById('savings').textContent = '₹' + Math.round(savings).toLocaleString('en-IN');
+            document.getElementById('co2').textContent = Math.round(co2) + ' kg';
+        }
+        calculate();
+    </script>  -->
 </body>
+
 </html>
